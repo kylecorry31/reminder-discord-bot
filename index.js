@@ -8,7 +8,7 @@ console.log(meetings);
 const client = new Discord.Client();
 
 client.once("ready", () => {
-  console.log("Synapse bot is online");
+  console.log("Reminder bot is online");
 });
 
 function sendMessage(message) {
