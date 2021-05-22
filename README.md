@@ -1,4 +1,4 @@
-# Synapse bot
+# Reminder bot
 
 A simple bot for use with my friend group
 
