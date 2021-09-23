@@ -2,6 +2,8 @@ version: "3.8"
 services:
   redis:
     image: "redis:6.2.5-alpine3.14"
+    volumes:
+      - ./data:/data
     ports:
       - 6379
     restart: "unless-stopped"

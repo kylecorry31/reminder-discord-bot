@@ -90,6 +90,7 @@ function addEvent(key, cron, message, msg){
   });
   redisClient.lrem('events', 0, key, () => {});
   redisClient.rpush('events', key, () => {});
+  redisClient.save();
 }
 
 function removeEvent(key, msg){
@@ -97,6 +98,7 @@ function removeEvent(key, msg){
     if (ok){
       msg.reply(`${key} was deleted`);
       redisClient.lrem('events', 0, key, () => {});
+      redisClient.save();
       unscheduleEvent(key);
     }
   });
