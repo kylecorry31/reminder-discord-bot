@@ -4,9 +4,11 @@ services:
     image: "redis:alpine"
     ports:
       - 6379
+    restart: "unless-stopped"
   bot:
     build: .
     depends_on:
       - redis
     links:
       - redis
+    restart: "unless-stopped"
