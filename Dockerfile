@@ -1,4 +1,4 @@
-FROM node:current-alpine
+FROM node:14.17.6-alpine3.14
 
 LABEL org.opencontainers.image.title="Reminder Bot"
 

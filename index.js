@@ -131,5 +131,7 @@ function scheduleEvent(key, cron, message){
 
 function unscheduleEvent(key){
   const job = jobMap[key];
-  job?.cancel();
+  if (job != null){
+    job.cancel();
+  }
 }
