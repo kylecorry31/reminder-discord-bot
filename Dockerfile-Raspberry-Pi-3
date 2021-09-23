@@ -1,0 +1,15 @@
+FROM arm32v6/alpine:3.11.12
+
+LABEL org.opencontainers.image.title="Reminder Bot"
+
+RUN apk --no-cache add nodejs npm
+
+RUN mkdir -p /usr/src/app
+
+COPY . /usr/src/app
+
+WORKDIR /usr/src/app
+
+RUN npm install
+
+ENTRYPOINT [ "node", "index.js" ]
